@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(numbersList);
 
+
     }
 
     public void openFamilyMembersList (View view){
         Intent familyList = new Intent(this, FamilyActivity.class);
-
         startActivity(familyList);
 
     }

@@ -46,23 +46,43 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        // Find the View that shows family members list
+
+        TextView familyList = (TextView)findViewById(R.id.family);
+        // Set a listener on that view
+
+        familyList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // create a new intent to open the {@link FamilyActivity}
+
+                Intent familyMembersIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(familyMembersIntent);
+            }
+        });
+
+        //Find view that shows Color list
+        TextView colorsList = (TextView)findViewById(R.id.colors);
+        // Set a listener on that view
+        colorsList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent colorsListIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsListIntent);
+            }
+        });
+
+        //Find view that shows Phrases list
+        TextView phrasesList = (TextView)findViewById(R.id.phrases);
+        // Set a listener on that view
+        phrasesList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent phrasesListIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesListIntent);
+            }
+        });
+
     }
 
-
-
-    public void openFamilyMembersList (View view){
-        Intent familyList = new Intent(this, FamilyActivity.class);
-        startActivity(familyList);
-
-    }
-
-    public void openColorsList (View view){
-        Intent colorsList = new Intent(this, ColorsActivity.class);
-        startActivity(colorsList);
-    }
-
-    public void openPhrasesList (View view){
-        Intent phasesList = new Intent(this, PhrasesActivity.class);
-        startActivity(phasesList);
-    }
 }

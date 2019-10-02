@@ -15,6 +15,7 @@
  */
 package com.example.android.miwok;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,22 +31,24 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        NumbersClickListener clickListener = new NumbersClickListener();
+
         // Find the View that shows numbers category
 
         TextView numbers = (TextView)findViewById(R.id.numbers);
-        // Set a clickListiner on that View
-        numbers.setOnClickListener(clickListener);
+        // Set a clickListener on that View
+        numbers.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View view){
+                //Create a new intent to open the {@link NumbersActivity}
+                Intent numbersIntent = new Intent(MainActivity.this,NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+
+        });
 
     }
 
-  /*  public void openNumbersList (View view){
-        Intent numbersList = new Intent(this, NumbersActivity.class);
 
-        startActivity(numbersList);
-
-
-    }*/
 
     public void openFamilyMembersList (View view){
         Intent familyList = new Intent(this, FamilyActivity.class);

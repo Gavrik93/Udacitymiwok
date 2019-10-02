@@ -106,7 +106,7 @@ README.md
 app/.gitignore
 app/build.gradle
 app/proguard-rules.pro
-app/src/
+#app/src/
 build.gradle
 gradle.properties
 gradlew
